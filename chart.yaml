@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: home-assistant
+    repoURL: https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    helm:
+      releaseName: home-assistant
+      valueFiles:
+      - values.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: homeassistant
