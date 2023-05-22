@@ -7,7 +7,7 @@ spec:
   project: homelab
   source:
     chart: home-assistant k8s-at-home/home-assistant
-    targetRevision: 13.4.2
+    targetRevision: 2022.5.4
     repoURL: https://k8s-at-home.com/charts/
     helm:
       releaseName: home-assistant
