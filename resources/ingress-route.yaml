@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+
+metadata:
+  name: homeassistant
+spec:
+  entryPoints:
+    - websecure
+  tls:
+    secretName: wildcard.ryankey.dev-tls
+  routes:
+    - kind: Rule
+      match: Host(`ha.ryankey.dev`) || Host(`homeassistant.ryankey.dev`)
+      priority: 10
+      services:
+        - name: home-assistant
+          port: 8123
