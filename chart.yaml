@@ -10,7 +10,7 @@ spec:
     repoURL: https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
     helm:
       releaseName: home-assistant
-      targetRevision: "13.4.2"
+      targetRevision: 13.4.2
       valueFiles:
       - values.yaml
   destination:
