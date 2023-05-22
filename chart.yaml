@@ -6,7 +6,7 @@ metadata:
 spec:
   project: homelab
   source:
-    chart: home-assistant k8s-at-home/home-assistant
+    chart: k8s-at-home/home-assistant
     targetRevision: 13.4.2
     repoURL: https://k8s-at-home.com/charts/
     helm:
