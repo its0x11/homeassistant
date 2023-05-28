@@ -10,17 +10,16 @@ spec:
     metadata:
       labels:
         app: home-assistant
-    spec:
-      hostNetwork: true
-      containers:
-      - name: home-assistant
-        image: homeassistant/home-assistant:stable
-        ports:
-        - containerPort: 8123
-        volumeMounts:
-        - mountPath: /config
-          name: config
-      volumes:
-      - name: config
-        persistentVolumeClaim:
-          claimName: home-assistant-pvc
+  hostNetwork: true
+  containers:
+  - name: home-assistant
+    image: homeassistant/home-assistant:stable
+    ports:
+    - containerPort: 8123
+    volumeMounts:
+    - mountPath: /config
+      name: config
+  volumes:
+  - name: config
+    persistentVolumeClaim:
+      claimName: home-assistant-pvc
